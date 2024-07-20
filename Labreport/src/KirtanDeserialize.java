@@ -10,7 +10,7 @@ public class KirtanDeserialize  {
         Person deserializedPerson;
 
         try{
-            FileInputStream fileInputStream = new FileInputStream("person.data");
+            FileInputStream fileInputStream = new FileInputStream("person.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             deserializedPerson = (Person) objectInputStream.readObject();
             System.out.println("Deserialized Person object: " + deserializedPerson);

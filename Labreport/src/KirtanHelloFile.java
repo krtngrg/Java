@@ -1,6 +1,5 @@
 package dupli;
 
-
 import java.io.FileWriter;
 import java.io.IOException;
 

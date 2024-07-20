@@ -3,10 +3,9 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Kirtan9button  {
-    public static void main(String[] args) {
+    public Kirtan9button(){
         JFrame frame = new JFrame("9 Buttons");
         GridLayout grid = new GridLayout(3,3);
-
 
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -14,15 +13,15 @@ public class Kirtan9button  {
         frame.setLayout(grid);
         frame.setResizable(false);
 
-        JButton button1 = new JButton();
-        JButton button2 = new JButton();
-        JButton button3 = new JButton();
-        JButton button4 = new JButton();
-        JButton button5 = new JButton();
-        JButton button6 = new JButton();
-        JButton button7 = new JButton();
-        JButton button8 = new JButton();
-        JButton button9 = new JButton();
+        JButton button1 = new JButton("1");
+        JButton button2 = new JButton("2");
+        JButton button3 = new JButton("3");
+        JButton button4 = new JButton("4");
+        JButton button5 = new JButton("5");
+        JButton button6 = new JButton("6");
+        JButton button7 = new JButton("7");
+        JButton button8 = new JButton("8");
+        JButton button9 = new JButton("9");
 
         frame.add(button1);
         frame.add(button2);
@@ -33,6 +32,8 @@ public class Kirtan9button  {
         frame.add(button7);
         frame.add(button8);
         frame.add(button9);
-
+    }
+    public static void main(String[] args) {
+       new Kirtan9button();
     }
 }

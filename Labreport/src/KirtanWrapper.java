@@ -11,8 +11,6 @@ public class KirtanWrapper {
 
         int unboxedNum = numInWrapper; // Unboxing: Integer to int
 
-
-
         System.out.println("Autoboxed Integer value: " + numInWrapper);
         System.out.println("Unboxed int value: " + unboxedNum);
 

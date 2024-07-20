@@ -19,7 +19,7 @@ public class KirtanThreadAlive extends Thread
         t1.start();
         System.out.println("after starting thread isAlive: "+t1.isAlive());
 
-        String str=String.join("","Happy","birthday");
+        String str=String.join("","Happy","birthday");  //join function
         System.out.println(str);
     }
 }

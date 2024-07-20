@@ -29,7 +29,7 @@ class Person implements Serializable {
             Person person = new Person("Kirtan", 18);
 
             try{
-                FileOutputStream fileOutputStream = new FileOutputStream("person.data");
+                FileOutputStream fileOutputStream = new FileOutputStream("person.txt");
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
                 objectOutputStream.writeObject(person);
                 System.out.println("Person object serialized successfully!");

@@ -1,55 +1,48 @@
 package dupli;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class KirtanGuiCalc implements ActionListener {
 
-    private JTextField num1Field, num2Field, resultField;
-    private JButton addButton, subtractButton;
+    private JTextField num1Field, num2Field,addField, subtractField;
+    private JButton resultButton;
 
     public KirtanGuiCalc() {
         JFrame frame = new JFrame("Calculator");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Create labels
-        JLabel num1Label = new JLabel("Number 1:");
-        JLabel num2Label = new JLabel("Number 2:");
-        JLabel resultLabel = new JLabel("Result:");
+        JLabel num1Label = new JLabel("Num 1:");
+        JLabel num2Label = new JLabel("Num 2:");
+        JLabel addLabel = new JLabel("Addition:");
+        JLabel subLabel = new JLabel("Subtraction:");
 
-        // Create text fields
-        num1Field = new JTextField(10);
-        num2Field = new JTextField(10);
-        resultField = new JTextField(10);
-        resultField.setEditable(false); // Set result field to read-only
+        num1Field = new JTextField();
+        num2Field = new JTextField();
+        addField = new JTextField();
+        subtractField = new JTextField();
+        resultButton = new JButton("Result");
+        addField.setEditable(false);
+        subtractField.setEditable(false);
 
-        // Create buttons
-        addButton = new JButton("Add");
-        subtractButton = new JButton("Subtract");
+        resultButton.addActionListener(this);
 
-        // Add action listeners to buttons
-        addButton.addActionListener(this);
-        subtractButton.addActionListener(this);
-
-        // Arrange components in a grid layout
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 2, 5, 5));
+        panel.setLayout(new GridLayout(5,2));
         panel.add(num1Label);
         panel.add(num1Field);
         panel.add(num2Label);
         panel.add(num2Field);
-        panel.add(addButton);
-        panel.add(subtractButton);
-        panel.add(resultLabel);
-        panel.add(resultField);
+        panel.add(addLabel);
+        panel.add(addField);
+        panel.add(subLabel);
+        panel.add(subtractField);
+        panel.add(resultButton);
 
-        // Add panel to the frame and display
-        frame.setSize(1000,1000);
+        frame.setSize(500,500);
         frame.add(panel);
-//        frame.pack();
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     @Override
@@ -61,13 +54,12 @@ public class KirtanGuiCalc implements ActionListener {
             num1 = Double.parseDouble(num1Field.getText());
             num2 = Double.parseDouble(num2Field.getText());
 
-            if (e.getSource() == addButton) {
                 result = num1 + num2;
-                resultField.setText(String.valueOf(result));
-            } else if (e.getSource() == subtractButton) {
+                addField.setText(String.valueOf(result));
+
                 result = num1 - num2;
-                resultField.setText(String.valueOf(result));
-            }
+                subtractField.setText(String.valueOf(result));
+
         } catch (NumberFormatException ex) {
             // Handle invalid input (non-numeric characters)
             JOptionPane.showMessageDialog(null, "Please enter valid numbers!", "Error", JOptionPane.ERROR_MESSAGE);
